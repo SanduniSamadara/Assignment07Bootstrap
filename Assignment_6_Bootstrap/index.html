@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 6 Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cc74b92efe.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-body-emphasis" href="#"><h1>POS System</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="linkCustomer" href="#">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="linkOrder" href="#">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="linkItem" href="#">Items</a>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Others
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class=" d-flex ">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Log Out</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+</header>
+<hr>
+
+<main>
+
+    <section class="section-customer container">
+        <h2><i class="fa-solid fa-people-line"></i> Customer</h2>
+        <div>
+            <article class="search">
+                <label class="bg-primary" for="searchCustomer">Search Customer</label>
+                <input id="searchCustomer" class="form-control form-control-sm" type="text"
+                       placeholder="Input Name/NIC/Tp Here" aria-label=".form-control-sm example">
+                <button type="button" class="btn btn-success">Search</button>
+            </article>
+            <div class="btnSide">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">New
+                    Customer
+                </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">View
+                    Customers
+                </button>
+            </div>
+            <!--Model-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 bg-success" id="exampleModalLabel">New Customer</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputId" class="form-label">Customer ID :</label>
+                                    <input type="text" class="form-control" id="exampleInputId">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputName" class="form-label">Customer Name :</label>
+                                    <input type="text" class="form-control" id="exampleInputName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputAddress" class="form-label">Customer Address :</label>
+                                    <input type="text" class="form-control" id="exampleInputAddress">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputSalary" class="form-label">Customer Salary :</label>
+                                    <input type="number" class="form-control" id="exampleInputSalary">
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" id="SaveBtnCustomer"  data-bs-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-warning">Renew</button>
+                            <button type="button" class="btn btn-primary">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="butttonList">
+            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-info">Details</button>
+            <button type="button" class="btn btn-success">Clear</button>
+        </div>
+        <div>
+
+            <table class="table mt-3 bg-body-tertiary ">
+                <thead class="table bg-success">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+    <br><br>
+    <section class="section-item container">
+        <!--        manika mek oya hdnna mn bln innm dn  koo hdnna manika jhet krnnm ad mek iwrkmuko manika budu ammo ai;; nifi mti ha enm doygnn ht krnnko haa aniwrem ithru tk krnn ona hrida dn krn wdya threnone manikata hari enm doygnn me mekt item ekk dnko dn e athi ee kiwwe name d ne namai item ekai dekma manika mulu ekm ne nee ark wthai-->
+        <h2><i class="fa-solid fa-boxes-stacked"></i> Items</h2>
+        <div>
+            <article class="search">
+                <label class="bg-primary" for="searchCustomer">Search Item</label>
+                <input id="searchItem" class="form-control form-control-sm" type="text"
+                       placeholder="Input Item Name/Code Here" aria-label=".form-control-sm example">
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success">Serach</button>
+                    </div>
+                    <div class=" col-4 col-md-4">
+
+                        <select id="inputState" class="form-select">
+                            <option selected>Name</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+
+            </article>
+
+            <div class="btnSide2">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal1">New
+                    Item
+                </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    View All Item
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 bg-success" id="exampleModalLabel1">New Item</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputId" class="form-label">Item Code :</label>
+                                    <input type="text" class="form-control" id="exampleInputId1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputName" class="form-label">Item Name :</label>
+                                    <input type="text" class="form-control" id="exampleInputName1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPrice" class="form-label">Item Price :</label>
+                                    <input type="number" class="form-control" id="exampleInputPrice">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputQuantity" class="form-label">Item Quantity :</label>
+                                    <input type="number" class="form-control" id="exampleInputQuantity">
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-warning">Renew</button>
+                            <button type="button" class="btn btn-primary">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="butttonList">
+            <button type="button" class="btn btn-success">Delete</button>
+            <button type="button" class="btn btn-danger">Details</button>
+            <button type="button" class="btn btn-info">Clear</button>
+        </div>
+        <div class="container">
+
+            <table class="table mt-3 bg-body-tertiary">
+                <thead class="bg-success">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+    <br><br>
+
+
+    <!-- ---------------------------------------------------->
+    <section class="section-placeOrder container">
+        <div class="row">
+            <div class="col-4">
+                <main class="container-fluid">
+                    <article class="inVoceDetails">
+                        <label class=" label_Head bg-success" for="exampleInputId">InVoice Details</label>
+                        <form>
+                            <div class="row mt-5">
+                                <div class="mb-3 col-5">
+                                    <label for="exampleInputId" class="form-label">Order Id :</label>
+                                    <input type="text" class="form-control" id="exampleInputId2">
+                                </div>
+                                <div class="mb-3 col-5">
+                                    <label for="exampleInputDate" class="form-label">Date :</label>
+                                    <input type="date" class="form-control" id="exampleInputDate">
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3 row">
+                                <div class="col-5">
+                                    <label for="inputCustomer" class="form-label">Customer :</label>
+                                    <select id="inputCustomer" class="form-select">
+                                        <option selected></option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-5">
+                                    <label for="exampleInputCustomerId" class="form-label">Customer Id :</label>
+                                    <input type="text" class="form-control" id="exampleInputCustomerId">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="mb-3 col-5">
+                                    <label for="exampleInputName" class="form-label">Name :</label>
+                                    <input type="text" class="form-control" id="exampleInputName2">
+                                </div>
+                                <div class="mb-3 col-5">
+                                    <label for="exampleInputSalary" class="form-label">Salary :</label>
+                                    <input type="number" class="form-control" id="exampleInputSalary2">
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3 col-10">
+                                <label for="exampleInputAddress" class="form-label">Address :</label>
+                                <input type="text" class="form-control" id="exampleInputAddress2">
+                            </div>
+
+
+                        </form>
+                    </article>
+                </main>
+
+            </div>
+            <!---------------------------------------------------------------------------------------------- ?-->
+            <div class="col-4">
+                <main class="container-fluid">
+
+                    <article class="inVoceDetails">
+                        <label class=" label_Head bg-success" for="exampleInputId">Item Select</label>
+                        <form>
+                            <div class="row mt-5">
+                                <div class="col-6">
+                                    <label for="inputItem" class="form-label">Item :</label>
+                                    <select id="inputItem" class="form-select">
+                                        <option selected></option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-6">
+                                    <label for="exampleInputItemCode" class="form-label">Item Code :</label>
+                                    <input type="text" class="form-control" id="exampleInputItemCode">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="mb-3 col-4">
+                                    <label for="exampleInputName" class="form-label">Item Name :</label>
+                                    <input type="text" class="form-control" id="exampleInputName3">
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="exampleInputSalary" class="form-label">Price :</label>
+                                    <input type="number" class="form-control" id="exampleInputSalary3">
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="exampleInputQtyOnHand" class="form-label">qtyOnHand :</label>
+                                    <input type="number" class="form-control" id="exampleInputQtyOnHand">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-12">
+                                <label for="exampleInputQtyOrder" class="form-label">Order Quantity :</label>
+                                <input type="number" class="form-control" id="exampleInputQtyOrder">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-danger" id="btnAddItem">Add Item</button>
+                        </form>
+
+                    </article>
+                </main>
+
+
+            </div>
+                <!-- ------------------------------------------------------------>
+              <div class="col-4">
+                  <main class="container-fluid">
+
+                      <article class="inVoceDetails">
+
+                          <form>
+                              <h2 class="total ">Total  :</h2>
+                              <h2 class="total">SubTotal  :</h2>
+                              <div class="row">
+                                  <div class="mb-3 col-4 mt-5 ">
+                                      <label for="exampleInputName" class="form-label">Cash :</label>
+                                      <input type="number" class="form-control" id="exampleInputCash">
+                                  </div>
+                                  <div class="mb-3 col-4 mt-5">
+                                      <label for="exampleInputSalary" class="form-label">Discount :</label>
+                                      <input type="number" class="form-control" id="exampleInputDiscount">
+                                  </div>
+
+                              </div>
+
+                              <div class="mb-3 col-12">
+                                  <label for="exampleInputQtyOrder" class="form-label">Balance :</label>
+                                  <input type="number" class="form-control" id="exampleInputBalance">
+                              </div>
+
+                              <button type="submit" class="btn btn-success" id="btnPurchase">Purchase</button>
+                          </form>
+
+                      </article>
+
+
+                  </main>
+
+              </div>
+
+<!-------------------------------------------------------------------------------->
+
+
+            <div class="container">
+
+                <table class="table mt-3 bg-body-tertiary">
+                    <thead  class="bg-success">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+
+        </div>
+    </section>
+</main>
+
+
+<!--=============================================================-->
+
+<script src="assests/jQuary/jquery-3.6.4.min.js"></script>
+<script src="assests/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    $(".section-customer").css('display','block');
+    $(".section-item").css('display','none');
+    $(".section-placeOrder").css('display','none');
+
+    $("#linkCustomer").click(function () {
+
+        $(".section-customer").css('display','block');
+        $(".section-item").css('display','none');
+        $(".section-placeOrder").css('display','none');
+
+    });
+
+    $("#linkItem").click(function () {
+
+        $(".section-customer").css('display','none');
+        $(".section-item").css('display','block');
+        $(".section-placeOrder").css('display','none');
+
+    });
+
+
+    $("#linkOrder").click(function () {
+
+        $(".section-customer").css('display','none');
+        $(".section-item").css('display','none');
+        $(".section-placeOrder").css('display','block');
+
+    });
+
+
+    /*  Save btn Customer */
+
+    $("#SaveBtnCustomer").click(function () {
+        // gather customer information
+        let customerId = $("#exampleInputId").val();
+        let customerName = $("#exampleInputName").val();
+        let customerAddress = $("#exampleInputAddress").val();
+        let customerSalary = $("#exampleInputSalary").val();
+
+    console.log(customerId,customerName,customerAddress,customerSalary);
+    });
+
+
+
+</script>
+</body>
+</html>
